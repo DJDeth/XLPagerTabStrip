@@ -177,11 +177,8 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
     
     open func setupDefaultViewController(at index: Int, offset: Int? = nil) {
         guard currentIndex != index else { return }
-        guard isViewLoaded, !self.viewControllers.isEmpty else {
+        if isViewLoaded && !self.viewControllers.isEmpty {
             currentIndex = index
-            return
-        }
-        guard view.window != nil else {
             let step = (currentIndex < index) ? 1 : -1
             for subindex in stride(from: currentIndex+step, through: index, by: step) {
                 if let offset = offset {
@@ -190,6 +187,7 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
                     containerView.setContentOffset(CGPoint(x: pageOffsetForChild(at: subindex), y: 0), animated: false)
                 }
             }
+        } else {
             return
         }
     }
@@ -318,6 +316,23 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
         updateContent()
     }
     
+    open func customReloadPagerTabStripView() {
+        guard isViewLoaded else { return }
+        for childController in viewControllers where childController.parent != nil {
+            childController.beginAppearanceTransition(false, animated: false)
+            childController.willMove(toParentViewController: nil)
+            childController.view.removeFromSuperview()
+            childController.removeFromParentViewController()
+            childController.endAppearanceTransition()
+        }
+        reloadViewControllers()
+        containerView.contentSize = CGSize(width: containerView.bounds.width * CGFloat(viewControllers.count), height: containerView.contentSize.height)
+        if currentIndex >= viewControllers.count {
+            currentIndex = viewControllers.count - 1
+        }
+        preCurrentIndex = currentIndex
+    }
+    
     // MARK: - UIScrollDelegate
     
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -391,7 +406,7 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
         return (fromIndex, toIndex, scrollPercentage)
     }
     
-    private func reloadViewControllers() {
+    func reloadViewControllers() {
         guard let dataSource = datasource else {
             fatalError("dataSource must not be nil")
         }
@@ -411,5 +426,4 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
     private var lastSize = CGSize(width: 0, height: 0)
     internal var isViewRotating = false
     internal var isViewAppearing = false
-    
 }
