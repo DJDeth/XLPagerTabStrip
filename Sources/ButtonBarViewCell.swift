@@ -28,7 +28,9 @@ open class ButtonBarViewCell: UICollectionViewCell {
 
     @IBOutlet open var imageView: UIImageView!
     @IBOutlet open var label: UILabel!
-
+    @IBOutlet open var separatorView: UIView!
+    @IBOutlet weak var separatorWidthConstraint: NSLayoutConstraint!
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         

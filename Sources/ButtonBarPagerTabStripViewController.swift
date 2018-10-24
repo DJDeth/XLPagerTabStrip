@@ -67,6 +67,11 @@ public struct ButtonBarPagerTabStripSettings {
         public var buttonBarItemsShouldFillAvailableWidth = true
         // only used if button bar is created programaticaly and not using storyboards or nib files
         public var buttonBarHeight: CGFloat?
+        
+        public var showSeparator: Bool = false
+        public var separatorColor: UIColor? = UIColor.white
+        public var separatorWidth: Float = 1.0
+        public var separatorInset: UIEdgeInsets?
     }
     
     public var style = Style()
@@ -368,6 +373,14 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         cell.isAccessibilityElement = true
         cell.accessibilityLabel = cell.label.text
         cell.accessibilityTraits.insert([.button, .header])
+        
+        cell.separatorView.isHidden = !settings.style.showSeparator
+        if settings.style.showSeparator {
+            cell.separatorWidthConstraint.constant = CGFloat(settings.style.separatorWidth)
+            cell.separatorView.backgroundColor = settings.style.separatorColor
+        }
+        
+        
         return cell
     }
     

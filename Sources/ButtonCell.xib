@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,31 +18,69 @@
                 <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7f-rk-sQl">
-                        <rect key="frame" x="22" y="12" width="37.5" height="17"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFG-yJ-6Th">
-                        <rect key="frame" x="22.5" y="2.5" width="35" height="35"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyv-Og-Doc">
+                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TXM-LQ-jz9">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BgG-sp-Og9">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7f-rk-sQl">
+                                                <rect key="frame" x="21.5" y="11.5" width="37.5" height="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFG-yJ-6Th">
+                                                <rect key="frame" x="22.5" y="2.5" width="35" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="35" id="VRw-5F-5WY"/>
+                                                    <constraint firstAttribute="height" constant="35" id="ojk-Ug-Lgh"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="s7f-rk-sQl" firstAttribute="centerY" secondItem="BgG-sp-Og9" secondAttribute="centerY" id="2MK-KQ-gbv"/>
+                                            <constraint firstItem="tFG-yJ-6Th" firstAttribute="centerY" secondItem="BgG-sp-Og9" secondAttribute="centerY" id="35Y-fu-0qd"/>
+                                            <constraint firstItem="s7f-rk-sQl" firstAttribute="centerX" secondItem="BgG-sp-Og9" secondAttribute="centerX" id="KQg-RL-L8s"/>
+                                            <constraint firstItem="tFG-yJ-6Th" firstAttribute="centerX" secondItem="BgG-sp-Og9" secondAttribute="centerX" id="YYP-hS-PA4"/>
+                                        </constraints>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B6k-bV-EJ5">
+                                        <rect key="frame" x="0.0" y="-5" width="1" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="pEi-T0-bS9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="35" id="VRw-5F-5WY"/>
-                            <constraint firstAttribute="height" constant="35" id="ojk-Ug-Lgh"/>
+                            <constraint firstAttribute="bottom" secondItem="TXM-LQ-jz9" secondAttribute="bottom" id="F3K-Du-7dA"/>
+                            <constraint firstAttribute="trailing" secondItem="TXM-LQ-jz9" secondAttribute="trailing" id="edQ-it-eSR"/>
+                            <constraint firstItem="TXM-LQ-jz9" firstAttribute="leading" secondItem="pyv-Og-Doc" secondAttribute="leading" id="oUN-Hd-j9W"/>
+                            <constraint firstItem="TXM-LQ-jz9" firstAttribute="top" secondItem="pyv-Og-Doc" secondAttribute="top" id="po3-kP-NYy"/>
                         </constraints>
-                    </imageView>
+                    </view>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.027450980390000001" green="0.72549019609999998" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="tFG-yJ-6Th" firstAttribute="centerY" secondItem="zg4-fX-zUF" secondAttribute="centerY" id="5so-ZP-gRs"/>
-                <constraint firstItem="tFG-yJ-6Th" firstAttribute="centerX" secondItem="zg4-fX-zUF" secondAttribute="centerX" id="9em-NR-hoa"/>
-                <constraint firstItem="s7f-rk-sQl" firstAttribute="centerY" secondItem="zg4-fX-zUF" secondAttribute="centerY" id="ZeP-6I-AXE"/>
-                <constraint firstItem="s7f-rk-sQl" firstAttribute="centerX" secondItem="zg4-fX-zUF" secondAttribute="centerX" id="c15-bZ-hPG"/>
+                <constraint firstItem="pyv-Og-Doc" firstAttribute="top" secondItem="zg4-fX-zUF" secondAttribute="top" id="2Oh-bW-NEO"/>
+                <constraint firstAttribute="bottom" secondItem="pyv-Og-Doc" secondAttribute="bottom" id="Haf-un-6ar"/>
+                <constraint firstAttribute="trailing" secondItem="pyv-Og-Doc" secondAttribute="trailing" id="LvL-hI-ydE"/>
+                <constraint firstItem="pyv-Og-Doc" firstAttribute="leading" secondItem="zg4-fX-zUF" secondAttribute="leading" id="VD9-RF-65v"/>
             </constraints>
             <connections>
                 <outlet property="imageView" destination="tFG-yJ-6Th" id="Odb-dR-tf4"/>
                 <outlet property="label" destination="s7f-rk-sQl" id="4gU-tb-BMB"/>
+                <outlet property="separatorView" destination="B6k-bV-EJ5" id="9Pa-fK-NGU"/>
+                <outlet property="separatorWidthConstraint" destination="pEi-T0-bS9" id="NUc-Ab-0DG"/>
             </connections>
             <point key="canvasLocation" x="307" y="541"/>
         </collectionViewCell>
