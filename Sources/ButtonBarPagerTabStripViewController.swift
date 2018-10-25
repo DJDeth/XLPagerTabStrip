@@ -374,7 +374,7 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         cell.accessibilityLabel = cell.label.text
         cell.accessibilityTraits.insert([.button, .header])
         
-        cell.separatorView.isHidden = !settings.style.showSeparator
+        cell.separatorView.isHidden = indexPath.item == self.viewControllers.count - 1 ? true : !settings.style.showSeparator
         if settings.style.showSeparator {
             cell.separatorWidthConstraint.constant = CGFloat(settings.style.separatorWidth)
             cell.separatorView.backgroundColor = settings.style.separatorColor
