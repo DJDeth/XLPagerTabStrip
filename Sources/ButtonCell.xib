@@ -25,16 +25,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BgG-sp-Og9">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7f-rk-sQl">
-                                                <rect key="frame" x="21.5" y="11.5" width="37.5" height="17"/>
+                                                <rect key="frame" x="21" y="11.5" width="37.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFG-yJ-6Th">
-                                                <rect key="frame" x="22.5" y="2.5" width="35" height="35"/>
+                                                <rect key="frame" x="22" y="2.5" width="35" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="VRw-5F-5WY"/>
                                                     <constraint firstAttribute="height" constant="35" id="ojk-Ug-Lgh"/>
@@ -49,14 +49,18 @@
                                             <constraint firstItem="tFG-yJ-6Th" firstAttribute="centerX" secondItem="BgG-sp-Og9" secondAttribute="centerX" id="YYP-hS-PA4"/>
                                         </constraints>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B6k-bV-EJ5">
-                                        <rect key="frame" x="0.0" y="-5" width="1" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="B6k-bV-EJ5">
+                                        <rect key="frame" x="79" y="0.0" width="1" height="40"/>
+                                        <color key="backgroundColor" white="0.66000000000000003" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="1" id="pEi-T0-bS9"/>
+                                            <constraint firstAttribute="width" constant="1" id="ycw-Fs-Ev1"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="B6k-bV-EJ5" secondAttribute="bottom" id="PYk-a2-a4Q"/>
+                                    <constraint firstItem="B6k-bV-EJ5" firstAttribute="top" secondItem="TXM-LQ-jz9" secondAttribute="top" id="isM-Bl-VdC"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,7 +84,7 @@
                 <outlet property="imageView" destination="tFG-yJ-6Th" id="Odb-dR-tf4"/>
                 <outlet property="label" destination="s7f-rk-sQl" id="4gU-tb-BMB"/>
                 <outlet property="separatorView" destination="B6k-bV-EJ5" id="9Pa-fK-NGU"/>
-                <outlet property="separatorWidthConstraint" destination="pEi-T0-bS9" id="NUc-Ab-0DG"/>
+                <outlet property="separatorWidthConstraint" destination="ycw-Fs-Ev1" id="SSa-wM-vEs"/>
             </connections>
             <point key="canvasLocation" x="307" y="541"/>
         </collectionViewCell>
