@@ -83,6 +83,8 @@
             <connections>
                 <outlet property="imageView" destination="tFG-yJ-6Th" id="Odb-dR-tf4"/>
                 <outlet property="label" destination="s7f-rk-sQl" id="4gU-tb-BMB"/>
+                <outlet property="separatorBottomConstraint" destination="PYk-a2-a4Q" id="vZx-x6-SOK"/>
+                <outlet property="separatorTopConstraint" destination="isM-Bl-VdC" id="fcm-jb-Mtv"/>
                 <outlet property="separatorView" destination="B6k-bV-EJ5" id="9Pa-fK-NGU"/>
                 <outlet property="separatorWidthConstraint" destination="ycw-Fs-Ev1" id="SSa-wM-vEs"/>
             </connections>
