@@ -176,6 +176,9 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         buttonBarView.layoutIfNeeded()
+        if buttonBarView.numberOfItems(inSection: 0) <= 1 {
+            self.hideButtonBarView()
+        }
     }
     
     open override func viewDidLayoutSubviews() {
@@ -296,6 +299,16 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         }
         
         return cells
+    }
+    
+    open func hideButtonBarView(){
+        let buttonBarViewHeight = self.buttonBarView.frame.size.height
+        buttonBarView.frame = CGRect(origin: buttonBarView.frame.origin, size: CGSize(width: 0.0, height: 0.0))
+        
+        var containerViewRect = self.containerView.frame
+        containerViewRect.origin = buttonBarView.frame.origin
+        containerViewRect.size.height = containerViewRect.size.height + buttonBarViewHeight
+        self.containerView.frame = containerViewRect
     }
     
     // MARK: - UICollectionViewDelegateFlowLayut
