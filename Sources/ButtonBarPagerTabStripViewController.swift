@@ -72,6 +72,8 @@ public struct ButtonBarPagerTabStripSettings {
         public var separatorColor: UIColor? = UIColor.white
         public var separatorWidth: Float = 1.0
         public var separatorInset: UIEdgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        
+        public var hideBarWhenSingleTab: Bool = true
     }
     
     public var style = Style()
@@ -176,7 +178,7 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         buttonBarView.layoutIfNeeded()
-        if buttonBarView.numberOfItems(inSection: 0) <= 1 {
+        if buttonBarView.numberOfItems(inSection: 0) <= 1 && settings.style.hideBarWhenSingleTab {
             self.hideButtonBarView()
         }
     }
